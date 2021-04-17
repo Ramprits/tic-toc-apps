@@ -1,10 +1,27 @@
 import React, { ReactElement } from "react";
-import { View, Text } from "react-native";
+import { View, Text, Button } from "react-native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { StackNavigatorParams } from "@config/navigator";
+type HomeProps = {
+  navigation: StackNavigationProp<StackNavigatorParams, "Home">;
+};
 
-const Home = (): ReactElement => {
+const Home = ({ navigation }: HomeProps): ReactElement => {
   return (
     <View>
-      <Text>Home screen</Text>
+      <Text
+        style={{
+          fontFamily: "DeliusUnicase_400Regular",
+          marginBottom: 10,
+          marginTop: 10,
+        }}
+      >
+        Home screen
+        <Button
+          title="Click me"
+          onPress={() => navigation.navigate("Game")}
+        ></Button>
+      </Text>
     </View>
   );
 };

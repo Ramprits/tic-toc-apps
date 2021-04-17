@@ -1,10 +1,17 @@
 import React, { ReactElement } from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
+import { Text } from "@components";
+
+import { StackNavigationProp } from "@react-navigation/stack";
+import { StackNavigatorParams } from "@config/navigator";
+type GameProps = {
+  navigation: StackNavigationProp<StackNavigatorParams, "Game">;
+};
 
 const Game = (): ReactElement => {
   return (
     <View>
-      <Text>Game screen</Text>
+      <Text weight="700">Game screen with custom text</Text>
     </View>
   );
 };
