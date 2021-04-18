@@ -1,28 +1,27 @@
 import React, { ReactElement } from "react";
-import { View, Text, Button } from "react-native";
+
+import { ScrollView, Image, View } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { StackNavigatorParams } from "@config/navigator";
+import { GradientBackground, Button } from "@components";
+import styles from "./home.styles";
 type HomeProps = {
   navigation: StackNavigationProp<StackNavigatorParams, "Home">;
 };
 
 const Home = ({ navigation }: HomeProps): ReactElement => {
   return (
-    <View>
-      <Text
-        style={{
-          fontFamily: "DeliusUnicase_400Regular",
-          marginBottom: 10,
-          marginTop: 10,
-        }}
-      >
-        Home screen
-        <Button
-          title="Click me"
-          onPress={() => navigation.navigate("Game")}
-        ></Button>
-      </Text>
-    </View>
+    <GradientBackground>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Image source={require("@assets/favicon.png")} style={styles.logo} />
+        <View style={styles.buttons}>
+          <Button title="Single Player" />
+          <Button title="Multi Player" />
+          <Button title="Login" />
+          <Button title="Settings" />
+        </View>
+      </ScrollView>
+    </GradientBackground>
   );
 };
 

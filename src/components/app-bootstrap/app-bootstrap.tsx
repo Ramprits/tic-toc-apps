@@ -6,7 +6,7 @@ import {
   DeliusUnicase_700Bold,
 } from "@expo-google-fonts/delius-unicase";
 import AppLoading from "expo-app-loading";
-import styles from "./app-bootstrap.style";
+import styles from "./app-bootstrap.styles";
 
 type AppBootstrapProps = {
   children: ReactNode;

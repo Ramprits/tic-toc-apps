@@ -2,6 +2,7 @@ import React, { ReactElement } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Home, Game } from "@screens";
+import { StatusBar } from "expo-status-bar";
 
 export type StackNavigatorParams = {
   Home: undefined;
@@ -12,6 +13,7 @@ const Stack = createStackNavigator<StackNavigatorParams>();
 const Navigator = (): ReactElement => {
   return (
     <NavigationContainer>
+      <StatusBar style="auto" />
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"

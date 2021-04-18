@@ -18,7 +18,7 @@ const Text = ({ children, style, weight, ...props }: TextProps) => {
   return (
     <NativeText
       {...props}
-      style={[{ fontFamily: fontFamily || "DeliusUnicase_400Regular" }]}
+      style={[{ fontFamily: fontFamily || "DeliusUnicase_400Regular" }, style]}
     >
       {children}
     </NativeText>
